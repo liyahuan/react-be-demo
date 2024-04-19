@@ -1,0 +1,27 @@
+:root{
+  /*Primary Palette*/
+  --dark-green:#183E40;
+  --dark-green-hover:#818F92;
+  --dark-green-300:#597175;
+  --light-green:#0d6363;
+  --light-cyan:#E7EFEF;
+  /*--light-green-100:#B4CFCF;*/
+  --gray:#d9d9d9;
+  --dark-grey:#2c2c2c;
+  /*Secondary Palette*/
+  --light-mauve:#DAD4DE;
+  --dark-rose:#A47379;
+  --cream:#ECE2DF;
+
+  /*Grey Scale*/
+  --white:#ffffff;
+  --grey-50:#f7f7f7;
+  --grey-100:#e5e5e5;
+  --grey-300:#ababab;
+  --grey-500:#808080;
+  --grey-700:#4d4d4d;
+  /*Semantic Colors*/
+  --error:#C21419;
+  --warning:#F08532;
+  --success:#2D9033;
+}

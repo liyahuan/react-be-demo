@@ -1,0 +1,48 @@
+
+.btn-default {padding: 4px 10px;}
+.btn {font-family: 'Avenir Medium'; font-size:15px; border-radius: 0; text-transform: uppercase;    padding: 0.6em 1.3em 0.6em;
+    letter-spacing: 0.05em; }
+.btn:focus {
+    outline: none;
+}
+.btn:disabled{
+  opacity: .5;
+}
+.mac .btn,.linux .btn,.ipad .btn,.android .btn{padding: 0.7em 1.3em 0.5em;}
+.iphone .btn{ padding: 0.82em 1.2em 0.38em; }
+.btn-success:hover,
+.btn-success:focus,
+.btn-success:active,
+.btn-success.active,
+.open .dropdown-toggle.btn-success,.btn-secondary:hover{ background-color:var(--dark-green-hover); border-color:var(--dark-green-hover); }
+.btn-success { color: white; background-color: var(--dark-green); border-color: var(--dark-green);}
+  .storybook-button--small {
+    font-size: 12px;
+    padding: 10px 16px;
+  }
+  .storybook-button--medium {
+    font-size: 14px;
+    padding: 11px 20px;
+  }   
+  .storybook-button--large {
+    font-size: 16px;
+    padding: 12px 24px; 
+  }
+  .storybook-button__icon {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 0.5em;
+  }
+  .storybook-button__text {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  .storybook-button:active {
+    color: #002060;
+    background-color: #bfdfff;
+  }
+  .storybook-button:disabled {
+    cursor: not-allowed;
+    color: #8c8c8c;
+    background-color: #d9d9d9;
+  }
