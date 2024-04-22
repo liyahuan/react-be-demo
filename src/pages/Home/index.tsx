@@ -15,7 +15,7 @@ function Home() {
         <code><Link to="about">About Us</Link></code>
       </div>
       <Link to="about">About Us</Link>
-       <div>        
+      <div>        
         <code>
           const navigate = useNavigate();
           function handlebuttonClick()`{`{
@@ -32,6 +32,9 @@ function Home() {
           </code>
         </pre>
       </div>
+      <form action="">
+        <input type="text" />
+      </form>
       <Button  onClick={handlebuttonClick} label="About Us"></Button>
     </div>   
   );

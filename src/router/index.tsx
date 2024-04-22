@@ -1,26 +1,24 @@
 import { Link, Route, createBrowserRouter, createRoutesFromElements } from "react-router-dom";
 import Home from "../pages/Home";
+import Layout from "../pages/Layout";
 import About from "../pages/About";
+import Board from "../pages/Board";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home />,
+    element: <Layout />,
+  },
+  {
+    path: 'board/:query',
+    element: <Board />,
+  },
+  {
+    path: 'about',
+    element: <About />,
   },
   {
     path: "about",
     element: <About />,
   },
 ]);
-// export default router;
-// const router = createBrowserRouter(
-//   createRoutesFromElements(
-//     <Route
-//         path="/"
-//         element={<Home />}
-
-//         path="/about"
-//         element={<About />}
-//     />
-//   )
-// )
 export default router;
