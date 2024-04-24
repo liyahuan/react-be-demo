@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, Navigate, Outlet, useNavigate } from "react-router-dom"
-
+import './layout.css';
 function Layout (){
   const [name, setName] = useState('')
 
