@@ -7,7 +7,7 @@ function Layout (){
   const navigate = useNavigate();
   function handlebuttonClick(){
     event?.preventDefault();
-    navigate(`board${name}`)
+    navigate(`board/${name}`)
   }
   return(
     <div>

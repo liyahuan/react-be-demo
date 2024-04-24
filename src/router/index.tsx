@@ -9,7 +9,7 @@ const router = createBrowserRouter([
     element: <Layout />,
   },
   {
-    path: 'board/:query',
+    path: 'board/:name',
     element: <Board />,
   },
   {

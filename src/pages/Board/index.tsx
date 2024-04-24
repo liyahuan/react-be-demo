@@ -2,10 +2,10 @@ import { useParams } from "react-router-dom";
 
 function Board (){
   const params = useParams();
-  const query = params.query
+  const name = params.name
   return(
     <h1>
-      我是内容 Board: {query}
+      Board,欢迎你 {name}!
     </h1>
   )    
 }
