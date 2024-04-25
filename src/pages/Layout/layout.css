@@ -3,9 +3,13 @@ form{
     margin-top: .5rem;
 }
 input{
+    --webkit-appearance: none;
+    box-sizing: border-box;
+    border:1px solid #333;
     padding: .6em .4em;
+    height: 42px;
 }
 button{
-    background-color: blanchedalmond;
+    background-color: rgb(245, 149, 4);
     margin-left: .5rem;
 }

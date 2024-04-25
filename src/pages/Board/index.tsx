@@ -8,6 +8,7 @@ function Board (){
   const location = useLocation();
   console.log(params);
   console.log(location)
+  
   const pram = `[${JSON.stringify(params)}]`
   const loction = `[${JSON.stringify(location)}]`
   console.log(`params: ${pram},location:${loction}`)
