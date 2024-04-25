@@ -3,11 +3,17 @@ import { Link, Navigate, Outlet, useNavigate } from "react-router-dom"
 import './layout.css';
 function Layout (){
   const [name, setName] = useState('')
+  const [error, setError] = useState(null);
 
   const navigate = useNavigate();
   function handlebuttonClick(){
     event?.preventDefault();
-    navigate(`board/${name}`)
+    if(/^\s*$/.test(name)){
+       console.log('请给input框输入文字')
+       setError('Good guess but a wrong answer. Try again!')
+    } else{
+      navigate(`board/${name}`)
+    }
   }
   return(
     <div>
@@ -25,10 +31,10 @@ function Layout (){
       
       {/* <Outlet/> */}
       <form action="">
-        <input value={name} onChange={e => setName(e.target.value)} type="text" placeholder="请输入你的名字" />
-        <button onClick={handlebuttonClick}>登录</button>
-        <p>{name}</p>
-
+        <input type="password" value={name} onChange={e => setName(e.target.value)} placeholder="请输入你的名字" />
+        <button  onClick={handlebuttonClick}>登录</button>
+        <p className="text">{name}</p>
+        <p className="error">{error}</p>
       </form>
     </div>
   )

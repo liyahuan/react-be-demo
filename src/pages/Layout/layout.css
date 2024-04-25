@@ -12,4 +12,15 @@ input{
 button{
     background-color: rgb(245, 149, 4);
     margin-left: .5rem;
+    &:disabled{
+        background-color: gray;
+        color: white;
+        pointer-events: none;
+    }
+    &:hover{
+        border-color: white !important;
+    }
+}
+.error{
+    height: 1.5em;
 }
