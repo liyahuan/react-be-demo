@@ -1,0 +1,34 @@
+
+一、React route dom 使用：
+
+	1、 hashRoute VS browseRouter 的区别
+
+	   browseRouter 是通过H5的history api来实现路由的
+
+	   hashTRouter  是通过#后面的哈希来实现路由的变化的
+
+    2、 动态路由的信息使用Hooks方法来获取
+
+        eg: 
+        useParams  const params = useParams();
+
+        useLocation  const location = useLocation()
+
+        userParams还有useLocation 返回的都是一个[object,object] 即包含对象的数组;
+
+    3、 Tips:题外话 js的模板字符串，自己以前只会拼接string类型的数据。如果数据是数组类型呢？或者是包含对象的数组类型呢？
+        AI告诉了我。
+        
+        string类型 拼接语法 `nihao${name}`
+        
+        数组类型  拼接语法  
+
+        (1)使用 JSON.stringify(myArray)     `[${JSON.stringify(myArray)}]` 先转换成string字符换类型，再插入模板字符串中，模板字符串可以自己加方括号来包裹数组
+        (2)自己加方括号包裹数组 `[${myArray}]`
+
+        带有对象的数组类型，就直接使用JSON.stringify(myArray) 这个方法了。
+
+二、Vite 默认的端口号是5173, 默认监听的是本地主机(localhost)，需要加上--host才能启动局域网可以访问的服务。
+
+三、windows默认只暴露指定的端口在外面，需要自己去修改规则，暴露自己想暴露的端口在外面。
+
