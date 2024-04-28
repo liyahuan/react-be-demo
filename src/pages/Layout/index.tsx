@@ -46,7 +46,7 @@ function Layout (){
       };
     }     
     
-  }, [formRef]);
+  }, []);
 
   return(
     <>
