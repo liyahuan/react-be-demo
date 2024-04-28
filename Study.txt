@@ -32,3 +32,7 @@
 
 三、windows默认只暴露指定的端口在外面，需要自己去修改规则，暴露自己想暴露的端口在外面。
 
+四、React的hooks，useState可以更改变量的状态，用它可以实现定义一个变量，并且更改变量。
+    eg: const [error, setError] = useState(null); 其中，error是数据状态(变量)，setError是修改数据状态的方法(直接定义变量值的方法)。useState是初始值。
+    useState([])
+    useState 不可以在for/if/其他函数中执行，跟React的hooks执行的顺序有关系。只能写到函数的根目录下。
