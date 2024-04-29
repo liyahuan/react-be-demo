@@ -34,6 +34,7 @@ function Layout (){
         setIsScrolled(true);
         const handleScroll = () => {
           const scrollY = window.scrollY;
+          //document.documentElement.scrollTop == window.scrollY
           console.log(`scrollY: ${scrollY}`)
           // > offsetTop - windowHeight 
           {/* < offsetTop + offsetHeight */}
@@ -50,9 +51,7 @@ function Layout (){
         return () => {
           window.removeEventListener('scroll', handleScroll);
         };
-      }
-
-     
+      }     
     }    
   }, []);
   return(
@@ -62,7 +61,7 @@ function Layout (){
       我是 一级路由layout组件
        {/*  when form not in view，fixed the form position bottom， 
      with windowScroll, form in viewport，remove the fixed position of form*/}
-      <div style={{'height':'500px', 'background':'yellowgreen','width':'100%'}}>我是占位的内容</div>
+      <div style={{height:'500px', background:'yellowgreen',width:'100%'}}>我是占位的内容</div>
       <div className= {`formWrapper  ${isScrolled ? 'fixedForm' : 'normalForm'} `  }>
         <form action="" ref={formRef}>
           <input type="password" value={name} onChange={e => setName(e.target.value)} placeholder="请输入你的名字" />
@@ -71,7 +70,7 @@ function Layout (){
           <p className="error">{error}</p>
         </form>
       </div>
-      <div style={{'height':'700px', 'background':'orange','width':'100%'}}>我是占位的内容</div>
+      <div style={{height:'700px', background:'orange',width:'100%'}}>我是占位的内容</div>
       {/* <div>
         <ul>
           <li>
