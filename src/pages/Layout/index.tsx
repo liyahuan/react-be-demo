@@ -17,54 +17,61 @@ function Layout (){
       navigate(`board/${name}`)
     }
   }
-  const windowHeight = window.innerHeight;
   useEffect(() => {
     if (formRef.current && navRef.current ) {
       const stickyHeight = navRef.current.offsetHeight;
       const offsetTop = formRef.current.offsetTop;
       const offsetHeight = formRef.current.offsetHeight;
-      const handleScroll = () => {
-        const scrollY = window.scrollY;
-        console.log(`windowHeight1: ${windowHeight}`)
-        console.log(`offsetHeight: ${offsetHeight}`)
-        console.log(`offsetTop: ${offsetTop}`)
-        console.log(`scrollY: ${scrollY}`)
-      if (scrollY > 50 ) {
-          console.log('我在页面内');
-          setIsScrolled(false);
-        } else {
-          console.log('我不在页面内');
-          setIsScrolled(true);
-        }
-        // console.log(scrollY)
-      };
-  
-      window.addEventListener('scroll', handleScroll);
-  
-      return () => {
-        window.removeEventListener('scroll', handleScroll);
-      };
-    }     
-    
-  }, []);
+      const windowHeight = window.innerHeight;
+      console.log(`windowHeight1: ${windowHeight}`)
+      console.log(`offsetHeight: ${offsetHeight}`)
+      console.log(`offsetTop: ${offsetTop}`)
+      if (offsetTop < windowHeight){
+        console.log('我在页面内');
+        setIsScrolled(false);
+      } else{
+        console.log('我不在页面内');
+        setIsScrolled(true);
+        const handleScroll = () => {
+          const scrollY = window.scrollY;
+          console.log(`scrollY: ${scrollY}`)
+          // > offsetTop - windowHeight 
+          {/* < offsetTop + offsetHeight */}
+        if (scrollY >= offsetTop - windowHeight  &&  scrollY < offsetTop + offsetHeight - stickyHeight ) {
+            console.log('我在页面内');
+            //在页面内的规则是元素的顶部冒出windowView的底部，元素的底部离开windowView的顶部，
+            setIsScrolled(false);
+          } else {
+            console.log('我不在页面内');
+            setIsScrolled(true);
+          }
+        };  
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+          window.removeEventListener('scroll', handleScroll);
+        };
+      }
 
+     
+    }    
+  }, []);
   return(
     <>
     <nav ref={navRef}>this is the banner</nav>
     <div className="container">
-            
       我是 一级路由layout组件
        {/*  when form not in view，fixed the form position bottom， 
      with windowScroll, form in viewport，remove the fixed position of form*/}
-     <div style={{'height':'200px', 'background':'yellowgreen','width':'100%'}}>
-      
-     </div>
-      <form action="" ref={formRef} className = {isScrolled ? 'normalForm' : 'scrolledForm' }>
-        <input type="password" value={name} onChange={e => setName(e.target.value)} placeholder="请输入你的名字" />
-        <button  onClick={handlebuttonClick}>登录</button>
-        <p className="text">{name}</p>
-        <p className="error">{error}</p>
-      </form>
+      <div style={{'height':'500px', 'background':'yellowgreen','width':'100%'}}>我是占位的内容</div>
+      <div className= {`formWrapper  ${isScrolled ? 'fixedForm' : 'normalForm'} `  }>
+        <form action="" ref={formRef}>
+          <input type="password" value={name} onChange={e => setName(e.target.value)} placeholder="请输入你的名字" />
+          <button onClick={handlebuttonClick}>登录</button>
+          <p className="text">{name}</p>
+          <p className="error">{error}</p>
+        </form>
+      </div>
+      <div style={{'height':'700px', 'background':'orange','width':'100%'}}>我是占位的内容</div>
       {/* <div>
         <ul>
           <li>

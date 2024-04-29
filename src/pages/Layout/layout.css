@@ -1,12 +1,12 @@
 .container{
     width: 1000px;
-    height: 850px;
     background-color: antiquewhite;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 nav{
+    /* position: static; */
     position: sticky;
     top:0;
     box-sizing: border-box;
@@ -18,6 +18,15 @@ nav{
 }
 form{
     margin-top: 3rem;
+    background-color: rebeccapurple;
+    width: 290px;
+}
+.formWrapper{
+    height: 132px;
+} 
+.formWrapper.fixedForm{
+    position: fixed;
+    bottom:0;
 }
 input{
     --webkit-appearance: none;
@@ -40,4 +49,5 @@ button{
 }
 .error{
     height: 1.5em;
+    margin-bottom: 0;
 }
