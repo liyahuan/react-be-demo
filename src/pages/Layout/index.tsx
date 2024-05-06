@@ -17,6 +17,16 @@ function Layout (){
       navigate(`board/${name}`)
     }
   }
+  function IsScrolled(){
+    setTimeout(function(){
+      setIsScrolled(true);
+    },600)
+  }
+  function NoScrolled(){
+    setTimeout(function(){
+      setIsScrolled(false);
+    },600)
+  }
   useEffect(() => {
     if (formRef.current && navRef.current ) {
       const stickyHeight = navRef.current.offsetHeight;
@@ -28,10 +38,10 @@ function Layout (){
       console.log(`offsetTop: ${offsetTop}`)
       if (offsetTop < windowHeight){
         console.log('我在页面内');
-        setIsScrolled(false);
+        NoScrolled()
       } else{
         console.log('我不在页面内');
-        setIsScrolled(true);
+        IsScrolled()
         const handleScroll = () => {
           const scrollY = window.scrollY;
           //document.documentElement.scrollTop == window.scrollY
@@ -41,10 +51,10 @@ function Layout (){
         if (scrollY >= offsetTop - windowHeight  &&  scrollY < offsetTop + offsetHeight - stickyHeight ) {
             console.log('我在页面内');
             //在页面内的规则是元素的顶部冒出windowView的底部，元素的底部离开windowView的顶部，
-            setIsScrolled(false);
+            NoScrolled()
           } else {
             console.log('我不在页面内');
-            setIsScrolled(true);
+            IsScrolled()
           }
         };  
         window.addEventListener('scroll', handleScroll);
@@ -61,7 +71,7 @@ function Layout (){
       我是 一级路由layout组件
        {/*  when form not in view，fixed the form position bottom， 
      with windowScroll, form in viewport，remove the fixed position of form*/}
-      <div style={{height:'500px', background:'yellowgreen',width:'100%'}}>我是占位的内容</div>
+      <div style={{height:'900px', background:'yellowgreen',width:'100%'}}>我是占位的内容</div>
       <div className= {`formWrapper  ${isScrolled ? 'fixedForm' : 'normalForm'} `  }>
         <form action="" ref={formRef}>
           <input type="password" value={name} onChange={e => setName(e.target.value)} placeholder="请输入你的名字" />
@@ -70,7 +80,7 @@ function Layout (){
           <p className="error">{error}</p>
         </form>
       </div>
-      <div style={{height:'700px', background:'orange',width:'100%'}}>我是占位的内容</div>
+      <div style={{height:'900px', background:'orange',width:'100%'}}>我是占位的内容</div>
       {/* <div>
         <ul>
           <li>

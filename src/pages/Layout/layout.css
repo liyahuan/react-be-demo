@@ -23,8 +23,9 @@ form{
 }
 .formWrapper{
     height: 132px;
+    transition: all 4s ease; 
 } 
-.formWrapper.fixedForm{
+.fixedForm{
     position: fixed;
     bottom:0;
 }
