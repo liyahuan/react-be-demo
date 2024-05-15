@@ -36,14 +36,12 @@
     eg: const [error, setError] = useState(null); 其中，error是数据状态(变量)，setError是修改数据状态的方法(直接定义变量值的方法)。useState是初始值。
     useState([])
     useState 不可以在for/if/其他函数中执行，跟React的hooks执行的顺序有关系。只能写到函数的根目录下。
-<<<<<<< Updated upstream
 五、useEffect 
     无依赖项的时候，组件初始化的时候，先执行一次。等到数据变化的时候，再次执行。
     有依赖项的时候：
         添加空数组依赖项的时候：组件只在初始化时执行 useEffect( ()=>{ console.log('[]就是空数组依赖项') },[] )
         数组不为空，是指定值的时候，组件初始化时执行一次，依赖特定项发生变化时，再次执行。
-=======
-五、useEffect是提供副作用处理的、除了主作用，都是副作用。由渲染引起的副作用。
-
-   React State控制非React组件，设置服务器连接，或在组件出现在屏幕上时，发送分析日志。
->>>>>>> Stashed changes
+    useEffect是提供副作用处理的、除了主作用，都是副作用。由渲染引起的副作用。
+    React State控制非React组件，设置服务器连接，或在组件出现在屏幕上时，发送分析日志。
+六、useRef
+    选定Dom元素
