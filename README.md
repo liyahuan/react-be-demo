@@ -28,3 +28,19 @@ export default {
 - Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
 - Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
 - Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+
+####
+pages/layout相当于是index页面。页面里面添加了input，button等form表单元素
+并且可以实现，跳转到的页面，携带了input框的输入值。
+####
+路由在router文件夹下面的index.tsx文件中
+
+####
+运行项目 npm run dev
+运行storybook npm run storybook
+
+###  styled-components
+添加了css-in-js的插件，styled-components
+
+####
+若import的文件，所在文件夹中，有同名的js || tsx文件，就必须写全引用的后缀。不然，会有歧义的。
