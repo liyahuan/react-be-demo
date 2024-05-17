@@ -46,3 +46,6 @@
 六、useRef
     选定Dom元素
 
+七、关于tsx文件的export, import
+    1、 带有default的 是默认导出，import的时候，直接导入
+    2、 不带default的是普通导出，import的时候，要放在{}里面，
