@@ -10,7 +10,8 @@ function Layout (){
   const navRef = useRef(null);
   function handlebuttonClick(){
     event?.preventDefault();
-    if(/^\s*$/.test(name)){
+    // if(/^\s*$/.test(name)){
+    if(!(/^liyahuan$/.test(name))){
        console.log('请给input框输入文字')
        setError('Good guess but a wrong answer. Try again!')
     } else{
@@ -76,8 +77,8 @@ function Layout (){
         <form action="" ref={formRef}>
           <input type="password" value={name} onChange={e => setName(e.target.value)} placeholder="请输入你的名字" />
           <button onClick={handlebuttonClick}>登录</button>
-          <p className="text">{name}</p>
-          <p className="error">{error}</p>
+          <p className="text" style={{'color':'white'}}>这是输入的内容: {name}</p>
+          <p className="error" style={{'color':'white'}}>这是报的错误:  {error}</p>
         </form>
       </div>
       <div style={{height:'900px', background:'orange',width:'100%'}}>我是占位的内容</div>

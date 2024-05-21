@@ -33,9 +33,12 @@
 三、windows默认只暴露指定的端口在外面，需要自己去修改规则，暴露自己想暴露的端口在外面。
 
 四、React的hooks，useState可以更改变量的状态，用它可以实现定义一个变量，并且更改变量。
-    1、 eg: const [error, setError] = useState(null); 其中，error是数据状态(变量)，setError是修改数据状态的方法(直接定义变量值的方法)。useState是初始值。
+    1、 eg: const [error, setError] = useState(null); 其中，error是数据状态(变量)，
+    setError是修改数据状态的方法(直接定义变量值的方法)。useState是初始值。
     2、 useState([])
-    3、 useState 不可以在for/if/其他函数中执行，跟React的hooks执行的顺序有关系。只能写到函数的根目录下。
+    3、 useState 不可以在for/if/其他函数中执行，跟React的hooks执行的顺序有关系。
+    只能写到函数的根目录下。
+    4、/Layout/index.tsx 这个文件夹下面，使用了useState，useEffect,usetRef 3个钩子 Hooks。
 五、useEffect 
     1、 无依赖项的时候，组件初始化的时候，先执行一次。等到数据变化的时候，再次执行。
     2、 有依赖项的时候：
@@ -45,6 +48,8 @@
     React State控制非React组件，设置服务器连接，或在组件出现在屏幕上时，发送分析日志。
 六、useRef
     选定Dom元素
+
+
 
 七、关于tsx文件的export, import
     1、 带有default的 是默认导出，import的时候，直接导入
