@@ -1,6 +1,6 @@
 import React from 'react';
 import './variable.css';
-// import './button.css';
+import './button.scss';
 import PrimaryButton, {
   SecondaryButton, 
   TertiaryButton 

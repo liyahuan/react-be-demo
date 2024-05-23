@@ -4,7 +4,7 @@ const PrimaryBlue = "#0400d2";
 const SecondaryBlue = "#0400f8";
 const TertiaryBlue = "#029964";
 
-const Button = styled.button`
+export const Button = styled.button`
     padding: 12px 24px;
     font-size: 1rem;
     border-radius: 2px;

@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Link, Navigate, Outlet, useNavigate } from "react-router-dom"
-import './layout.css';
+import './layout.scss';
 function Layout (){
   const [name, setName] = useState('')
   const [error, setError] = useState(null);
@@ -18,15 +18,19 @@ function Layout (){
       navigate(`board/${name}`)
     }
   }
+  function handleResetClick(){
+    event?.preventDefault();
+    setName('');
+  }
   function IsScrolled(){
     setTimeout(function(){
       setIsScrolled(true);
-    },600)
+    },300)
   }
   function NoScrolled(){
     setTimeout(function(){
       setIsScrolled(false);
-    },600)
+    },300)
   }
   useEffect(() => {
     if (formRef.current && navRef.current ) {
@@ -77,6 +81,7 @@ function Layout (){
         <form action="" ref={formRef}>
           <input type="password" value={name} onChange={e => setName(e.target.value)} placeholder="请输入你的名字" />
           <button onClick={handlebuttonClick}>登录</button>
+          <button onClick={handleResetClick}>重置</button>
           <p className="text" style={{'color':'white'}}>这是输入的内容: {name}</p>
           <p className="error" style={{'color':'white'}}>这是报的错误:  {error}</p>
         </form>
