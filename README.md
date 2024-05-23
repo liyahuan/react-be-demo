@@ -29,22 +29,25 @@ export default {
 - Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
 - Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
 
-####
+### layout的 scroll 
 pages/layout相当于是index页面。页面里面添加了input，button等form表单元素
 并且可以实现，跳转到的页面，携带了input框的输入值。
-####
-路由在router文件夹下面的index.tsx文件中
+### router
+路由在`router`文件夹下面的index.tsx文件中
 
-####
-运行项目 npm run dev
-运行storybook npm run storybook
+### 命令
+```js
+  运行项目 npm run dev
+  运行storybook npm run storybook
+  生成storybook-static文件夹 npm build storybook-static
+```
 
-####
-settings=>pages=> https://liyahuan.github.io/react-be-demo/storybook-static/ 可以访问到storybook-static的内容
-github使用github action部署任务。
+### github pages
+settings=>pages=> `https://liyahuan.github.io/react-be-demo/storybook-static/` 可以访问到storybook-static的内容
+github使用`github action`部署任务。
 
 ###  styled-components
-添加了css-in-js的插件，styled-components
+添加了css-in-js的插件，`styled-components`
 
 ####
 若import的文件，所在文件夹中，有同名的js || tsx文件，就必须写全引用的后缀。不然，会有歧义的。
