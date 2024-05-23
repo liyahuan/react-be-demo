@@ -39,6 +39,10 @@ pages/layout相当于是index页面。页面里面添加了input，button等form
 运行项目 npm run dev
 运行storybook npm run storybook
 
+####
+settings=>pages=> https://liyahuan.github.io/react-be-demo/storybook-static/ 可以访问到storybook-static的内容
+github使用github action部署任务。
+
 ###  styled-components
 添加了css-in-js的插件，styled-components
 
