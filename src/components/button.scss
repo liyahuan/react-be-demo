@@ -1,7 +1,22 @@
-
-.btn-default {padding: 4px 10px;}
-.btn {font-family: 'Avenir Medium'; font-size:15px; border-radius: 0; text-transform: uppercase;    padding: 0.6em 1.3em 0.6em;
-    letter-spacing: 0.05em; }
+:root{
+  --PrimaryBlue: #0400d2;
+  --Warning: #ff0000;
+  --white: #fff;
+}
+// .btn-default {padding: 4px 10px;}
+.btn {
+   font-family: "Roboto  Mono", monospace;;
+   font-size:15px; 
+   letter-spacing: 0.05em;
+   border-radius: 2px; 
+   text-transform: none;
+   min-width: 100px;
+   cursor: pointer;    
+   padding: 0.6em 1.3em 0.6em;
+   background-color: var(--PrimaryBlue);
+   border: 1px solid var(--PrimaryBlue);
+   color: var(--white);
+}
 .btn:focus {
     outline: none;
 }
@@ -10,12 +25,32 @@
 }
 .mac .btn,.linux .btn,.ipad .btn,.android .btn{padding: 0.7em 1.3em 0.5em;}
 .iphone .btn{ padding: 0.82em 1.2em 0.38em; }
+.btn--small{
+  font-size: .8rem;
+}
+.btn--medium{
+  font-size: 1.2rem;
+}
+.btn--large{
+  font-size: 1.5rem;
+}
+.btn--outline{
+  border:1px solid black;
+  background-color: transparent;
+  color: black;
+}
 .btn-success:hover,
 .btn-success:focus,
 .btn-success:active,
 .btn-success.active,
 .open .dropdown-toggle.btn-success,.btn-secondary:hover{ background-color:var(--dark-green-hover); border-color:var(--dark-green-hover); }
-.btn-success { color: white; background-color: var(--dark-green); border-color: var(--dark-green);}
+.btn-success { color: var(--white); background-color: var(--dark-green); border-color: var(--dark-green);}
+.btn-warning{
+  color: var(--white); background-color: var(--Warning); border-color: var(--Warning);
+  &:hover,&:focus,&:active{
+    background-color:var(--dark-green-hover); border-color:var(--dark-green-hover);
+  }
+}
   .storybook-button--small {
     font-size: 12px;
     padding: 10px 16px;

@@ -1,0 +1,37 @@
+.hero-custom{
+    color: #ffffff;
+    background-color: yellowgreen;
+    position: relative;
+    background-size: cover;
+    height: 0;
+    padding-bottom: 31%;
+    &__cont{
+        left: 0;
+        right: 48%;
+        position: absolute;
+        top: 50%;
+        transform: translatey(-50%);
+        -webkit-transform: translatey(-50%);
+        -moz-transform: translatey(-50%);
+        -ms-transform: translatey(-50%);
+        text-align: center;
+    }
+    &__body {
+        display: inline-block;
+    }
+    &__title{
+        font-family: "ZapfHumanist601BT-Roman";
+        color: inherit;
+        font-size: 40px;
+        letter-spacing: 0.05em;
+        line-height: 1.5;
+        padding-bottom: 0.5em;
+    }
+    &__tro{
+        font-size: 16px;
+        margin-bottom: 1.4em;
+        line-height: 1.5;
+        display: inline-block;
+    }
+
+}

@@ -4,7 +4,7 @@ import { Button } from '../../components/Button.tsx';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
-  title: 'Example/Button',
+  title: 'UI Components/Button',
   component: Button,
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
@@ -27,26 +27,33 @@ type Story = StoryObj<typeof meta>;
 export const Primary: Story = {
   args: {
     primary: true,
-    label: 'Button',
-  },
-};
-
-export const Success: Story = {
-  args: {
-    primary: false,
+    warning: false,
     label: 'Button',
   },
 };
 
 export const Large: Story = {
   args: {
+    primary: false,
+    warning: false,
     size: 'large',
+    label: 'Button',
+  },
+};
+
+export const Medium: Story = {
+  args: {
+    primary: false,
+    warning: false,
+    size: 'medium',
     label: 'Button',
   },
 };
 
 export const Small: Story = {
   args: {
+    primary: false,
+    warning: false,
     size: 'small',
     label: 'Button',
   },
@@ -55,8 +62,8 @@ export const Small: Story = {
 
 export const Warning: Story = {
   args: {
-    primary: true,
-    label: 'Delete now',
-    backgroundColor: 'red',
+    primary: false,
+    warning: true,
+    label: 'Button',
   }
 };
