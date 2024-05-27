@@ -1,6 +1,4 @@
 import { useState } from 'react';
-import {Route, Routes} from 'react-router-dom'
-import Contact from './Contact';
 export default function Form() {
   const [answer, setAnswer] = useState('');
   const [error, setError] = useState(null);
@@ -14,7 +12,7 @@ export default function Form() {
     return <h1>That's right!</h1>
   }
 
-  async function handleSubmit(e) {
+  async function handleSubmit(e:any) {
     e.preventDefault();
     setStatus('submitting');
     try {
@@ -22,11 +20,11 @@ export default function Form() {
       setStatus('success');
     } catch (err) {
       setStatus('typing');
-      setError(err);
+      setError(error);
     }
   }
 
-  function handleTextareaChange(e) {
+  function handleTextareaChange(e:any) {
     setAnswer(e.target.value);
   }
 
@@ -53,7 +51,7 @@ export default function Form() {
   );
 }
 
-function submitForm(answer) {
+function submitForm(answer:any) {
   // Pretend it's hitting the network.
   return new Promise((resolve, reject) => {
     setTimeout(() => {
@@ -61,7 +59,7 @@ function submitForm(answer) {
       if (shouldError) {
         reject(new Error(answer));
       } else {
-        resolve();
+        resolve('');
       }
     }, 1500);
   });

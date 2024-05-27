@@ -1,5 +1,4 @@
-import { Link, Route, createBrowserRouter, createRoutesFromElements } from "react-router-dom";
-import Home from "../pages/Home";
+import { createBrowserRouter } from "react-router-dom";
 import Layout from "../pages/Layout";
 import About from "../pages/About";
 import Board from "../pages/Board";

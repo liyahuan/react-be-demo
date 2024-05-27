@@ -1,16 +1,15 @@
 import { useEffect, useRef, useState } from "react";
-import { Link, Navigate, Outlet, useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import './layout.scss';
 function Layout (){
   const [name, setName] = useState('')
-  const [error, setError] = useState(null);
+  const [error, setError] = useState('null');
   const [isScrolled, setIsScrolled] = useState(false);
   const navigate = useNavigate();
   const formRef = useRef(null);
   const navRef = useRef(null);
   function handlebuttonClick(){
-    event?.preventDefault();
-    // if(/^\s*$/.test(name)){
+    // event?.preventDefault();
     if(!(/^liyahuan$/.test(name))){
        console.log('请给input框输入文字')
        setError('Good guess but a wrong answer. Try again!')
@@ -19,7 +18,7 @@ function Layout (){
     }
   }
   function handleResetClick(){
-    event?.preventDefault();
+    // event?.preventDefault();
     setName('');
   }
   function IsScrolled(){
@@ -34,9 +33,9 @@ function Layout (){
   }
   useEffect(() => {
     if (formRef.current && navRef.current ) {
-      const stickyHeight = navRef.current.offsetHeight;
-      const offsetTop = formRef.current.offsetTop;
-      const offsetHeight = formRef.current.offsetHeight;
+      const stickyHeight = (navRef.current as HTMLElement).offsetHeight;
+      const offsetTop = (formRef.current as HTMLElement).offsetTop;
+      const offsetHeight = (formRef.current as HTMLElement).offsetHeight;
       const windowHeight = window.innerHeight;
       console.log(`windowHeight1: ${windowHeight}`)
       console.log(`offsetHeight: ${offsetHeight}`)

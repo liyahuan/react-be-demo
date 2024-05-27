@@ -1,6 +1,7 @@
 import { useParams, useLocation } from "react-router-dom";
 import { useLocalStorage } from "../../hooks/useLocalStorage"
-function Board (){
+import { useEffect } from "react";
+function Board(){
   const params = useParams();
   // useParams 可以拿到动态路由的值
   //userLocation 可以获取到Url的信息
@@ -12,9 +13,13 @@ function Board (){
 
   const [message, setMessage] = useLocalStorage('hooks-key','阿菲')
 
-  setTimeout(() => {
-    setMessage('cp')
-  }, 5000);
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setMessage('cp');
+    }, 5000);
+
+    return () => clearTimeout(timeout); // 清除定时器以避免内存泄漏
+  }, [setMessage]);
 
   return(
     <h1>
