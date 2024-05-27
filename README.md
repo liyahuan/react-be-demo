@@ -37,9 +37,9 @@ pages/layout相当于是index页面。页面里面添加了input，button等form
 
 ### 命令
 ```js
-  运行项目 npm run dev
-  运行storybook npm run storybook
-  生成storybook-static文件夹 npm build storybook-static
+  运行项目>> npm run dev
+  运行storybook>> npm run build storybook
+  生成storybook-static文件夹>> npm build storybook-static
 ```
 
 ### github pages
