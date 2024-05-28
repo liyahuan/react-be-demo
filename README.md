@@ -45,6 +45,7 @@ pages/layout相当于是index页面。页面里面添加了input，button等form
 ### github pages
 settings=>pages=> `https://liyahuan.github.io/react-be-demo/storybook-static/` 可以访问到storybook-static的内容
 github使用`github action`部署任务。
+大概是storybook的缓存，限制了storybook-static文件的生成，因为本地访问storybook-static，发现它还是个旧的文件夹。
 
 ###  styled-components
 添加了css-in-js的插件，`styled-components`
