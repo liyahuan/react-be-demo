@@ -14,6 +14,7 @@ const meta = {
   parameters: {
     // More on how to position stories at: https://storybook.js.org/docs/configure/story-layout
     layout: 'fullscreen',
+    
   },
   args: {
   },
@@ -25,7 +26,8 @@ type Story = StoryObj<typeof Header>;
 export const Er: Story = {
   args: {
     backgroundColor:'yellowgreen',
-    label: 'Engagement Rings'
+    heading: 'Engagement Rings',
+    subtext: 'Whether natural or lab grown, each of our diamonds is responsibly sourced and selected for its brilliant sparkle.'
   },
 };
 

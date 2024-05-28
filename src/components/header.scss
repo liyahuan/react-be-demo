@@ -3,8 +3,12 @@
     background-color: yellowgreen;
     position: relative;
     background-size: cover;
-    height: 0;
-    padding-bottom: 31%;
+    height: auto;
+    @media(min-width:992px){
+        height: 0;
+        padding-bottom: 31%;
+    }
+    
     &__cont{
         left: 0;
         right: 48%;
@@ -15,6 +19,11 @@
         -moz-transform: translatey(-50%);
         -ms-transform: translatey(-50%);
         text-align: center;
+        @media(max-width:991px){
+            position: static;
+            transform: translate(0);
+            padding: 20px 16px;
+        }
     }
     &__body {
         display: inline-block;
@@ -25,7 +34,12 @@
         font-size: 40px;
         letter-spacing: 0.05em;
         line-height: 1.5;
-        padding-bottom: 0.5em;
+        @media(max-width:991px){
+            font-size: 32px;
+        }
+    }
+    &__subtext{
+        font-size: 1rem;
     }
     &__tro{
         font-size: 16px;
@@ -33,5 +47,11 @@
         line-height: 1.5;
         display: inline-block;
     }
-
+    &__flex{
+        display: flex;
+        .hero-custom__cont{
+            position: static;
+            transform: none;
+        }
+    }
 }

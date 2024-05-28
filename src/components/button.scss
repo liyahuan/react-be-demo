@@ -1,7 +1,8 @@
 :root{
   --PrimaryBlue: #0400d2;
   --Warning: #ff0000;
-  --white: #fff;
+  --white: #ffffff;
+  --black: #2c2c2c;
 }
 // .btn-default {padding: 4px 10px;}
 .btn {
@@ -35,9 +36,13 @@
   font-size: 1.5rem;
 }
 .btn--outline{
-  border:1px solid black;
+  border:1px solid var(--black);
   background-color: transparent;
-  color: black;
+  color: var(--black);
+  &:hover{
+    background-color: var(--black);
+    color: var(--white);
+  }
 }
 .btn-success:hover,
 .btn-success:focus,
