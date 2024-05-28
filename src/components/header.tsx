@@ -30,7 +30,7 @@ export const Header = ({backgroundColor,heading,subtext,headercon,...props}:Head
                             </div>
                         
                         </div>
-                        <div>
+                        <div className="hero-custom__pic">
                             <img src="https://fakeimg.pl/300/" />
                         </div>
                     </div>
