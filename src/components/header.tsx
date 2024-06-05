@@ -8,62 +8,47 @@ interface HeaderProps {
     /** the subtitle for header */
     subtext: string;
     headercon: string
+    imageBoolean: boolean
 }
-export const Header = ({backgroundColor,heading,subtext,headercon,...props}:HeaderProps) =>{
-    function headerCon({ ISimage, IStext }: { ISimage: boolean, IStext: boolean }) {
-        if (ISimage) {
-            return (
-                <>
-                    <div className="hero-custom__flex">
-                        <div className="hero-custom__cont" style={{ left: '5%' }}>
-                            <div className="hero-custom__body" style={{ textAlign: 'left' }}>
-                                <div className="hero-custom__heading">
-                                    <div className="hero-custom__title">{heading}</div>
-                                </div> 
-                                <p className="hero-custom__subtext">{subtext}</p>
-                                <Button
-                                    label="Button"
-                                    onClick={() => {}}
-                                    primary
-                                    size="medium"
-                                />
-                            </div>
-                        
-                        </div>
-                        <div className="hero-custom__pic">
-                            <img src="https://fakeimg.pl/300/" />
-                        </div>
-                    </div>
-                </>
-                
-            );
-        } else if (IStext) {
-            return (
-                <div className="hero-custom__cont" style={{ left: '5%' }}>
-                    <div className="hero-custom__body" style={{ textAlign: 'left' }}>
-                        <div className="hero-custom__heading">
-                            <div className="hero-custom__title">{heading}</div>
-                        </div>
-                        <p className="hero-custom__subtext">{subtext}</p>
-                        <Button
-                            label="Button"
-                            onClick={() => {}}
-                            primary
-                            size="medium"
-                        />
-                    </div>
-                </div>
-            );
-        }
-        return null;
-    }       
+
+function HeaderImage({testimage,isImage}:{testimage:any,isImage:boolean}){
+    let isContent = testimage
+    if (isImage){
+       isContent = (
+        <div className="hero-custom__pic">
+            <img src="https://fakeimg.pl/300/" />
+        </div>
+       )
+    } 
+    return(
+        <>
+            {isContent}
+        </>
+    )
+}
+export const Header = ({backgroundColor,heading,subtext,headercon,imageBoolean=true,...props}:HeaderProps) =>{  
     return(
         <>
             <div className="hero-custom"
-            title="Woman wearing diamond engagement ring and distinctive diamond wedding bands" style={{ backgroundColor }}
-            {...props}>
-                <div>
-                    {headerCon({ ISimage: true, IStext: false })}
+            title="Woman wearing diamond engagement ring and distinctive diamond wedding bands"
+             style={{ backgroundColor }}
+                {...props}>
+                <div className="hero-custom__flex">
+                    <div className="hero-custom__cont" style={{ left: '5%' }}>
+                        <div className="hero-custom__body" style={{ textAlign: 'left' }}>
+                            <div className="hero-custom__heading">
+                                <div className="hero-custom__title">{heading}</div>
+                            </div> 
+                            <p className="hero-custom__subtext">{subtext}</p>
+                            <Button
+                                label="Button"
+                                onClick={() => {}}
+                                primary
+                                size="medium"
+                            />
+                        </div>
+                    </div>
+                    <HeaderImage isImage={imageBoolean} testimage={undefined} />
                 </div>
             </div>
         </>

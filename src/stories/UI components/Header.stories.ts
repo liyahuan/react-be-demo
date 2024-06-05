@@ -23,12 +23,19 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof Header>;
 
-export const Er: Story = {
+export const noImage: Story = {
   args: {
     backgroundColor:'yellowgreen',
     heading: 'Engagement Rings',
+    imageBoolean: false,
     subtext: 'Whether natural or lab grown, each of our diamonds is responsibly sourced and selected for its brilliant sparkle.'
   },
 };
 
-export const LoggedOut: Story = {};
+export const hasImage: Story = {
+  args: {
+    backgroundColor:'#5b9405',
+    heading: 'Engagement Rings',
+    subtext: 'Whether natural or lab grown, each of our diamonds is responsibly sourced and selected for its brilliant sparkle.'
+  },
+};

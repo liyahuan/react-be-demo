@@ -8,7 +8,6 @@
         aspect-ratio: 100 / 31;
         overflow: hidden;
     }
-    
     &__cont{
         left: 0;
         right: 48%;
@@ -50,6 +49,9 @@
     &__flex{
         display: flex;
         flex-direction: column;
+        @media(min-width:768px){
+            height:100%;
+        }
         .hero-custom__cont{
             position: static;
             transform: none;
@@ -70,6 +72,9 @@
                 //  height:100%;
                  object-fit: cover;
             }
+        }
+        &:has(.hero-custom__pic){
+            flex-direction: row;
         }
     }
 }
