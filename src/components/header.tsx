@@ -62,7 +62,9 @@ export const Header = ({backgroundColor,heading,subtext,headercon,...props}:Head
             <div className="hero-custom"
             title="Woman wearing diamond engagement ring and distinctive diamond wedding bands" style={{ backgroundColor }}
             {...props}>
-                {headerCon({ ISimage: true, IStext: false })}
+                <div>
+                    {headerCon({ ISimage: true, IStext: false })}
+                </div>
             </div>
         </>
     )
