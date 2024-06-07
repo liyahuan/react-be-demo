@@ -24,6 +24,8 @@ export default meta;
 type Story = StoryObj<typeof Header>;
 
 export const noImage: Story = {
+  //rename the story
+  name:'I have no image',
   args: {
     backgroundColor:'yellowgreen',
     heading: 'Engagement Rings',
@@ -33,6 +35,7 @@ export const noImage: Story = {
 };
 
 export const hasImage: Story = {
+  name:'I have image',
   args: {
     backgroundColor:'#5b9405',
     heading: 'Engagement Rings',
