@@ -9,6 +9,7 @@ interface HeaderProps {
     subtext: string;
     headercon: string
     imageBoolean: boolean
+    isSelected: boolean
 }
 
 function HeaderImage({isImage}:{isImage:boolean}){
@@ -36,9 +37,9 @@ function HeaderImage({isImage}:{isImage:boolean}){
     // && 与运算符。但是数字不能放到 与运算符的左侧，代码少的地方，用这种吧。
 
 }
-export const Header = ({backgroundColor,heading,subtext,headercon,imageBoolean=true,...props}:HeaderProps) =>{  
+export const Header = ({backgroundColor,heading,subtext,headercon,imageBoolean=true,isSelected=true,...props}:HeaderProps) =>{  
     return(
-        <div className="hero-custom"
+        <div className={`hero-custom ${isSelected ? 'selected' : ''}`}
             title="Woman wearing diamond engagement ring and distinctive diamond wedding bands"
              style={{ backgroundColor }}
                 {...props}>

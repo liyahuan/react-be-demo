@@ -33,6 +33,7 @@ export const Primary: Story = {
 };
 
 export const Large: Story = {
+  //args is from props
   args: {
     primary: false,
     warning: false,
