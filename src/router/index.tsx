@@ -4,6 +4,7 @@ import About from "../pages/About";
 import Board from "../pages/Board";
 import {Header} from "../components/header";
 import { Button } from "../components/Button";
+import Submit from "../pages/Form";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
   {
     path: "about",
     element: <About />,
+  },
+  {
+    path: "form",
+    element: <Submit />,
   },
   {
     path: "header",

@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { useNavigate } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import './layout.scss';
 function Layout (){
   const [name, setName] = useState('')
@@ -71,6 +71,16 @@ function Layout (){
   return(
     <>
     <nav ref={navRef}>this is the banner</nav>
+    <div>
+        <ul style={{listStyle:'none',display:'flex',columnGap:'20px'}}>
+          <li>
+            <Link to='/'>面板入口→</Link>
+            </li> 
+          <li>
+          <Link to="/form">Form表单→</Link>
+          </li>
+        </ul>
+      </div>
     <div className="container">
       我是 一级路由layout组件
        {/*  when form not in view，fixed the form position bottom， 
@@ -85,18 +95,7 @@ function Layout (){
           <p className="error" style={{'color':'white'}}>这是报的错误:  {error}</p>
         </form>
       </div>
-      <div style={{height:'900px', background:'orange',width:'100%'}}>我是占位的内容</div>
-      {/* <div>
-        <ul>
-          <li>
-            <Link to='/'>面板</Link>
-            </li> 
-          <li>
-          <Link to="/about">关于</Link>
-          </li>
-        </ul>
-      </div> */}
-      
+      <div style={{height:'900px', background:'orange',width:'100%'}}>我是占位的内容</div>      
       {/* <Outlet/> */}
      
     </div>
