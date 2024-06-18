@@ -16,7 +16,7 @@ export const Button = ({ primary = false, warning = false, size = 'medium',backg
   return (
     <>
     <button
-      type="button"
+      type="submit"
       // className={['btn btn--outline', `btn--${size}`, mode, mode2].join(' ')}
       className = {`btn btn--outline ${`btn--${size}`} ${mode} ${mode2} `}
       style={{ backgroundColor }}
