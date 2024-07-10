@@ -70,8 +70,8 @@ function Layout (){
   }, []);
   return(
     <>
-    <nav ref={navRef}>this is the banner</nav>
-    <div>
+    <nav  className="text-center" ref={navRef}>this is the banner</nav>
+    <div className="container mx-auto">
         <ul style={{listStyle:'none',display:'flex',columnGap:'20px'}}>
           <li>
             <Link to='/'>面板入口→</Link>
@@ -80,8 +80,8 @@ function Layout (){
           <Link to="/form">Form表单→</Link>
           </li>
         </ul>
-      </div>
-    <div className="container">
+    </div>
+    <div className="container mx-auto">
       我是 一级路由layout组件
        {/*  when form not in view，fixed the form position bottom， 
      with windowScroll, form in viewport，remove the fixed position of form*/}
