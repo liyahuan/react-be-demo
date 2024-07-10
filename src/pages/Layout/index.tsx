@@ -85,12 +85,16 @@ function Layout (){
       我是 一级路由layout组件
        {/*  when form not in view，fixed the form position bottom， 
      with windowScroll, form in viewport，remove the fixed position of form*/}
-      <div style={{height:'900px', background:'yellowgreen',width:'100%'}}>我是占位的内容</div>
+      <div className="h-[900px] bg-yellow-200 w-full">我是占位的内容</div>
       <div className= {`formWrapper  ${isScrolled ? 'fixedForm' : 'normalForm'} `  }>
-        <form action="" ref={formRef}>
-          <input type="password" value={name} onChange={e => setName(e.target.value)} placeholder="请输入你的名字" />
-          <button onClick={handlebuttonClick}>登录</button>
-          <button onClick={handleResetClick}>重置</button>
+        <form className="space-y-4 p-3" action="" ref={formRef}>
+          <div>
+            <input className="w-full" type="password" value={name} onChange={e => setName(e.target.value)} placeholder="请输入你的名字" />
+          </div>
+          <div className=" flex justify-between space-x-4">
+            <button className="w-full py-1 bg-blue-700 text-white" onClick={handlebuttonClick}>登录</button>
+            <button className="w-full py-1 bg-blue-700 text-white" onClick={handleResetClick}>重置</button>
+          </div>
           <p className="text" style={{'color':'white'}}>这是输入的内容: {name}</p>
           <p className="error" style={{'color':'white'}}>这是报的错误:  {error}</p>
         </form>
