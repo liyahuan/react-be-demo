@@ -70,14 +70,17 @@ function Layout (){
   }, []);
   return(
     <>
-    <nav  className="text-center" ref={navRef}>this is the banner</nav>
+    <nav  className="text-center text-blue-500 text-xl" ref={navRef}>this is the banner</nav>
     <div className="container mx-auto">
-        <ul style={{listStyle:'none',display:'flex',columnGap:'20px'}}>
+        <ul style={{listStyle:'none',display:'flex',columnGap:'20px',background:'white',fontSize:'20px'}}>
           <li>
             <Link to='/'>面板入口→</Link>
             </li> 
           <li>
-          <Link to="/form">Form表单→</Link>
+            <Link to="/form">Form表单→</Link>
+          </li>
+          <li>
+            <Link to="/slider">Slider test→</Link>
           </li>
         </ul>
     </div>

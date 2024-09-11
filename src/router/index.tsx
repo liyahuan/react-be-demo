@@ -6,6 +6,8 @@ import {Header} from "../components/header";
 import { Button } from "../components/Button";
 import Submit from "../pages/Form";
 import Home from "../pages/Home";
+import { SliderCacul } from "../pages/NouiSliders";
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -34,6 +36,10 @@ const router = createBrowserRouter([
   {
     path: 'button',
     element: <Button label={"test button"} primary={true}></Button>
-  }
+  },
+  {
+    path: 'slider',
+    element: <SliderCacul />
+  },
 ]);
 export default router;
