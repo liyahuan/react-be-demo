@@ -2,7 +2,7 @@
   function Contact() {
     return (
       <div>
-        <h1>Contact</h1>
+        <h1 className="tw:text-yellow">Contact</h1>
         <p>Contact us at info@example.com</p> 
       </div>   
     );

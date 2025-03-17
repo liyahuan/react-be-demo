@@ -52,3 +52,20 @@ github使用`github action`部署任务。
 
 ####
 若import的文件，所在文件夹中，有同名的js || tsx文件，就必须写全引用的后缀。不然，会有歧义的。
+
+#### 
+已经安装了tailwindcss。2025/03/17将其升级到v4版本  npx @tailwindcss/upgrade
+不好直接运行。需要删除原来的依赖[rmdir /s /q node_modules]，然后重新npm install。顺带，改变package.json里面的各种版本号["typescript": "~4.9.5", "tailwindcss": "^4.0",]。
+ 	
+##### prefix 加上前缀的写法
+tw:[&>li]:text-4xl
+
+##### input.css文件的命令 去除掉对input以及img的默认写法后的命令：
+@layer theme, base, components, utilities;
+@import "tailwindcss/theme.css" layer(theme) prefix(tw);
+/*@import "tailwindcss/preflight.css" layer(base);*/
+@import "tailwindcss/utilities.css" layer(utilities);
+
+
+#### tailwindcss的运行命令
+npx @tailwindcss/cli -i ./src/input.css -o ./src/index.css --watch

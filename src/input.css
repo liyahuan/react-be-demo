@@ -1,3 +1,14 @@
-@tailwind base;
+/* @tailwind base;
 @tailwind components;
-@tailwind utilities;
+@tailwind utilities; */
+/* ==for tailwindcss v3== */
+
+/* @import 'tailwindcss' prefix(tw); */
+/* ===全部引用=== */
+@layer theme, base, components, utilities;
+@import "tailwindcss/theme.css" layer(theme) prefix(tw);
+/*@import "tailwindcss/preflight.css" layer(base);*/
+@import "tailwindcss/utilities.css" layer(utilities);
+@theme {
+    --color-brand: #b4d455
+}
