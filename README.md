@@ -57,10 +57,10 @@ github使用`github action`部署任务。
 已经安装了tailwindcss。2025/03/17将其升级到v4版本  npx @tailwindcss/upgrade
 不好直接运行。需要删除原来的依赖[rmdir /s /q node_modules]，然后重新npm install。顺带，改变package.json里面的各种版本号["typescript": "~4.9.5", "tailwindcss": "^4.0",]。
  	
-##### prefix 加上前缀的写法
+##### tailwindcss 加上前缀prefix的写法
 tw:[&>li]:text-4xl
 
-##### input.css文件的命令 去除掉对input以及img的默认写法后的命令：
+##### input.css文件的命令 去除掉对input以及img的默认写法后的命令(preflight)：
 @layer theme, base, components, utilities;
 @import "tailwindcss/theme.css" layer(theme) prefix(tw);
 /*@import "tailwindcss/preflight.css" layer(base);*/
@@ -69,3 +69,6 @@ tw:[&>li]:text-4xl
 
 #### tailwindcss的运行命令
 npx @tailwindcss/cli -i ./src/input.css -o ./src/index.css --watch
+
+#### tailwindcss 如果有删除的class，只有重新运行生成命令时，已删除的class对应的css
+才会被删掉。

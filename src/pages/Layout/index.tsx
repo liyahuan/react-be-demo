@@ -70,7 +70,7 @@ function Layout (){
   }, []);
   return(
     <>
-    <nav className="tw:text-white! tw:text-center tw:text-blue-500 tw:text-xl" ref={navRef}>this is the banner</nav>
+    <nav className="tw:text-white! tw:text-center tw:text-xl" ref={navRef}>this is the banner</nav>
     <div className="container tw:mx-auto">
       <div className="tw:text-left tw:mr-auto tw:text-2xl tw:py-1">demo列表</div>
         <ul className="tw:w-full tw:text-left tw:gap-5 tw:bg-white tw:text-xl tw:[&>li]:py-2" style={{fontSize:'20px'}}>

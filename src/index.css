@@ -3,7 +3,6 @@
 @layer theme {
   :root, :host {
     --tw-color-yellow-200: oklch(0.945 0.129 101.54);
-    --tw-color-blue-500: oklch(0.623 0.214 259.815);
     --tw-color-blue-700: oklch(0.488 0.243 264.376);
     --tw-color-white: #fff;
     --tw-spacing: 0.25rem;
@@ -30,9 +29,6 @@
   }
   .tw\:w-full {
     width: 100%;
-  }
-  .tw\:list-none {
-    list-style-type: none;
   }
   .tw\:justify-between {
     justify-content: space-between;
@@ -86,19 +82,11 @@
     font-size: var(--tw-text-xl);
     line-height: var(--tw-leading, var(--tw-text-xl--line-height));
   }
-  .tw\:text-blue-500 {
-    color: var(--tw-color-blue-500);
-  }
   .tw\:text-white {
     color: var(--tw-color-white);
   }
   .tw\:text-white\! {
     color: var(--tw-color-white) !important;
-  }
-  .tw\:\[\&\>li\]\:py-1 {
-    &>li {
-      padding-block: calc(var(--tw-spacing) * 1);
-    }
   }
   .tw\:\[\&\>li\]\:py-2 {
     &>li {
