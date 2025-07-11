@@ -2,36 +2,19 @@ import { useEffect, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom"
 import './layout.scss';
 function Layout (){
+  const RIGHT_user = 'liyahuan';
+  const RIGHT_pwd = '123456';
+  const MAX_attempt = 3;
+  let CURRENT_attempt = 0;
   const [name, setName] = useState('')
+  const [password, setPwd] = useState('')
+  const [isLocked, setIsLocked] = useState(false);
   const [error, setError] = useState('null');
   const [isScrolled, setIsScrolled] = useState(false);
   const navigate = useNavigate();
   const formRef = useRef(null);
   const navRef = useRef(null);
-  function handlebuttonClick(){
-    // event?.preventDefault();
-    if(!(/^liyahuan$/.test(name))){
-       console.log('请给input框输入文字')
-       setError('Good guess but a wrong answer. Try again!')
-    } else{
-      navigate(`board/${name}`)
-    }
-  }
-  function handleResetClick(){
-    // event?.preventDefault();
-    setName('');
-  }
-  function IsScrolled(){
-    setTimeout(function(){
-      setIsScrolled(true);
-    },300)
-  }
-  function NoScrolled(){
-    setTimeout(function(){
-      setIsScrolled(false);
-    },300)
-  }
-  useEffect(() => {
+   useEffect(() => {
     if (formRef.current && navRef.current ) {
       const stickyHeight = (navRef.current as HTMLElement).offsetHeight;
       const offsetTop = (formRef.current as HTMLElement).offsetTop;
@@ -68,6 +51,47 @@ function Layout (){
       }     
     }    
   }, []);
+  function handlebuttonClick(event: { preventDefault: () => void; }){
+    event?.preventDefault();
+    //useless !(/^liyahuan$/.test(name))
+
+    if(name.trim() == '' || password.trim() ==''){
+      setError('用户名和密码不能为空')
+      CURRENT_attempt++; 
+      if(CURRENT_attempt >= MAX_attempt){
+        setError('账户已经锁定，请10s后尝试');
+        setIsLocked(true);
+      }
+      return
+    }
+
+    if(name === RIGHT_user && password === RIGHT_pwd){
+       navigate(`board/${name}`)  
+    } else{
+      CURRENT_attempt++
+      console.log(`请给input框输入文字 ${CURRENT_attempt}`)
+      setError('Good guess but a wrong answer. Try again!')
+      if(CURRENT_attempt >= MAX_attempt){
+        setError('账户已经锁定，请10s后尝试');
+        setIsLocked(true);
+      }
+    }
+  }
+  function handleResetClick(){
+    // event?.preventDefault();
+    setName('');
+  }
+  function IsScrolled(){
+    setTimeout(function(){
+      setIsScrolled(true);
+    },300)
+  }
+  function NoScrolled(){
+    setTimeout(function(){
+      setIsScrolled(false);
+    },300)
+  }
+ 
   return(
     <>
     <nav className="tw:text-white! tw:text-center tw:text-xl" ref={navRef}>this is the banner</nav>
@@ -93,11 +117,16 @@ function Layout (){
       <div className= {`formWrapper  ${isScrolled ? 'fixedForm' : 'normalForm'} `  }>
         <form className="tw:space-y-4 tw:p-3" action="" ref={formRef}>
           <div>
-            <input className="tw:w-full" type="password" value={name} onChange={e => setName(e.target.value)} placeholder="请输入你的名字" />
+            <input className="tw:w-full" type="name" value={name} 
+            onChange={e => setName(e.target.value)} disabled={isLocked} placeholder="请输入你的名字" />
+            <input className="tw:w-full" type="password" value={password}
+             onChange={e => setPwd(e.target.value)} disabled={isLocked} placeholder="请输入你的密码" />
           </div>
           <div className=" tw:flex tw:justify-between tw:space-x-4">
-            <button className="tw:w-full tw:py-1 tw:bg-blue-700 tw:text-white" onClick={handlebuttonClick}>登录</button>
-            <button className="tw:w-full tw:py-1 tw:bg-blue-700 tw:text-white" onClick={handleResetClick}>重置</button>
+            <button className="tw:w-full tw:py-1 tw:bg-blue-700 tw:text-white"
+             onClick={handlebuttonClick}  disabled={isLocked}>登录</button>
+            <button className="tw:w-full tw:py-1 tw:bg-blue-700 tw:text-white"
+             onClick={handleResetClick}  disabled={isLocked}>重置</button>
           </div>
           <p className="text" style={{'color':'white'}}>这是输入的内容: {name}</p>
           <p className="error" style={{'color':'white'}}>这是报的错误:  {error}</p>
