@@ -54,17 +54,23 @@ function Layout (){
   function handlebuttonClick(event: { preventDefault: () => void; }){
     event?.preventDefault();
     //useless !(/^liyahuan$/.test(name))
-
+    //1、验证非空，也可以用假值特性，因为在js中 空字符串是假值。
+    // ?是为了验证，是否非空的
+    // if(!name?.trim '' || password!.?trim()){
     if(name.trim() == '' || password.trim() ==''){
       setError('用户名和密码不能为空')
+      //尝试一次登录后，当前尝试次数+1
       CURRENT_attempt++; 
+      //当前尝试次数>最大可尝试次数[3]
       if(CURRENT_attempt >= MAX_attempt){
         setError('账户已经锁定，请10s后尝试');
         setIsLocked(true);
+      //账户锁定
       }
       return
     }
-
+    
+    //2、验证是对的，否则 currentAttempt+1
     if(name === RIGHT_user && password === RIGHT_pwd){
        navigate(`board/${name}`)  
     } else{
@@ -80,6 +86,7 @@ function Layout (){
   function handleResetClick(){
     // event?.preventDefault();
     setName('');
+    CURRENT_attempt = 0;
   }
   function IsScrolled(){
     setTimeout(function(){
@@ -107,6 +114,9 @@ function Layout (){
           <li>
             <Link to="/slider">Slider test→</Link>
           </li>
+          <li>
+            <Link to="/video-editor">Video Editor→</Link>
+          </li>
         </ul>
     </div>
     <div className="container tw:mx-auto tw:p-0">
@@ -117,12 +127,12 @@ function Layout (){
       <div className= {`formWrapper  ${isScrolled ? 'fixedForm' : 'normalForm'} `  }>
         <form className="tw:space-y-4 tw:p-3" action="" ref={formRef}>
           <div>
-            <input className="tw:w-full" type="name" value={name} 
+            <input className="tw:w-full" type="name" value={name}
             onChange={e => setName(e.target.value)} disabled={isLocked} placeholder="请输入你的名字" />
             <input className="tw:w-full" type="password" value={password}
              onChange={e => setPwd(e.target.value)} disabled={isLocked} placeholder="请输入你的密码" />
           </div>
-          <div className=" tw:flex tw:justify-between tw:space-x-4">
+          <div className="tw:flex tw:justify-between tw:space-x-4">
             <button className="tw:w-full tw:py-1 tw:bg-blue-700 tw:text-white"
              onClick={handlebuttonClick}  disabled={isLocked}>登录</button>
             <button className="tw:w-full tw:py-1 tw:bg-blue-700 tw:text-white"

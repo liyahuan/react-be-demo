@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createHashRouter } from "react-router-dom";
 import Layout from "../pages/Layout";
 import About from "../pages/About";
 import Board from "../pages/Board";
@@ -7,8 +7,9 @@ import { Button } from "../components/Button";
 import Submit from "../pages/Form";
 import Home from "../pages/Home";
 import { SliderCacul } from "../pages/NouiSliders";
+import VideoEditor from "../components/VideoEditor";
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: "/",
     element: <Layout />,
@@ -40,6 +41,10 @@ const router = createBrowserRouter([
   {
     path: 'slider',
     element: <SliderCacul />
+  },
+  {
+    path: 'video-editor',
+    element: <VideoEditor />
   },
 ]);
 export default router;
